@@ -138,4 +138,20 @@ class ProductManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void checkWhenThereAreZeroProducts() {
+        Repository repo = new Repository();
+        ProductManager manager = new ProductManager(repo);
+
+        Book book1 = new Book(76, "Один дома 1", 250, "Chris Columbus");
+        Book book2 = new Book(77, "Один дома 2", 300, "Chris Columbus");
+        Book book3 = new Book(78, "It", 500, "Stephen Edwin King");
+        Smartphone phone = new Smartphone(5, "Phone 11", 87_000, "Apple");
+
+        Product[] expected = {};
+        Product[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
