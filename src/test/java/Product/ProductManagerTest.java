@@ -150,7 +150,7 @@ class ProductManagerTest {
         Smartphone phone = new Smartphone(5, "Phone 11", 87_000, "Apple");
 
         Product[] expected = {};
-        Product[] actual = repo.findAll();
+        Product[] actual = manager.searchBy("Один дома 4");
 
         Assertions.assertArrayEquals(expected, actual);
     }
